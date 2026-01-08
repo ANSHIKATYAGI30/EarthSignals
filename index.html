@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EarthSignals</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+</head>
+<body>
+<header class="app-header">
+  <h1> 🌍 EarthSignals 🌍</h1>
+</header>
+
+<header>
+  <h1> 🏕️🌿Climate Insights Dashboard 🌡️📈 </h1>
+  <p>Interactive climate trends using Kaggle datasets</p>
+</header>
+
+<section class="controls">
+  <label>Select Country:</label>
+  <select id="countrySelect">
+  <option value="">Select Country</option>
+  <option value="AR">Argentina</option>
+  <option value="AU">Australia</option>
+  <option value="BR">Brazil</option>
+  <option value="CA">Canada</option>
+  <option value="CN">China</option>
+  <option value="FR">France</option>
+  <option value="DE">Germany</option>
+  <option value="IN">India</option>
+  <option value="JP">Japan</option>
+  <option value="MX">Mexico</option>
+  <option value="RU">Russia</option>
+  <option value="ZA">South Africa</option>
+  <option value="ID">Indonesia</option>
+  <option value="UK">United Kingdom</option>
+  <option value="US">United States</option>
+</select>
+
+  </select>
+</section>
+
+<div class="summary-box">
+  <h3>Summary for <span id="summaryCountry">Country</span></h3>
+  <p>Max CO₂: <span id="maxCo2">--</span></p>
+  <p>Avg Temperature: <span id="avgTemp">--</span></p>
+  <p>Avg Renewable Energy: <span id="avgRenewable">--</span></p>
+</div>
+
+<section class="charts">
+  <div class="card">
+    <h3>CO₂ Emissions Trend</h3>
+    <canvas id="co2Chart"></canvas>
+  </div>
+
+  <div class="card">
+  <h3>Country Emissions Ranking</h3>
+  <table id="rankingTable">
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>Country</th>
+        <th>CO₂ Emissions (Mt)</th>
+        <th>Renewable Energy (%)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Filled dynamically with JS -->
+    </tbody>
+  </table>
+</div>
+
+  <div class="card">
+    <h3>Temperature vs CO₂</h3>
+    <canvas id="tempCo2Chart"></canvas>
+  </div>
+
+  <div class="card">
+    <h3>Renewable Energy vs CO₂</h3>
+    <canvas id="renewableChart"></canvas>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
+

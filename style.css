@@ -1,0 +1,158 @@
+/* --- Import Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&family=Syne+Tactile&display=swap');
+
+
+body {
+  margin: 0;
+  font-family: 'Syne Tactile', sans-serif;
+  background: #e6f2f1; 
+  color: #1e3d3d; 
+}
+
+
+header {
+  background: linear-gradient(135deg, #008080, #5f9ea0, #6b5b95); /* teal → sea green → purple potato gradient */
+  color: #ffffff;
+  padding: 25px;
+  text-align: center;
+  font-family: 'Syne Mono', monospace;
+  font-size: 2rem;
+  font-weight: 700;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+
+.controls {
+  text-align: center;
+  padding: 20px;
+}
+
+select {
+  padding: 10px 14px;
+  font-size: 13px;
+  border-radius: 10px;
+  border: 1px solid #5f9ea0; 
+  background: #ffffff;
+  color: #1e3d3d;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Syne Tactile', sans-serif;
+  width: 250px; 
+  max-width: 90%; 
+}
+
+select:hover {
+  background: #d0f0f0; /* light sea green hover */
+  transform: scale(1.03); /* subtle hover scale */
+}
+
+
+.charts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 25px;
+  padding: 25px;
+}
+
+
+.card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 18px;
+  box-shadow: 0 6px 22px rgba(0,0,0,0.12);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.18);
+}
+
+
+.card h3 {
+  margin-top: 0;
+  font-size: 1.3rem;
+  color: #008080; /* teal for titles */
+  font-family: 'Syne Mono', monospace;
+}
+
+
+.card p, .card span {
+  font-family: 'Syne Tactile', sans-serif;
+  color: #5f9ea0; /* sea green for subtexts */
+}
+
+#rankingTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Syne Tactile', sans-serif;
+}
+
+#rankingTable th, #rankingTable td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+#rankingTable th {
+  background-color: #008080;
+  color: white;
+}
+
+#rankingTable tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* App Header */
+.app-header {
+  background: linear-gradient(90deg, #39abab, #3b84bc); 
+  color: #ffffff;
+  text-align: center;
+  padding: 25px 0;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.app-header h1 {
+  font-family: 'Syne Mono', monospace;
+  font-size: 3rem;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+.app-header .subtitle {
+  font-family: 'Syne Tactile', sans-serif;
+  font-size: 1.2rem;
+  margin-top: 5px;
+  opacity: 0.85;
+}
+
+.summary-box {
+  background: linear-gradient(135deg, #20B2AA, #6B5B95); /* sea green → purple potato */
+  color: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 400px;
+  text-align: center;
+  font-family: 'Syne Tactile', sans-serif;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.summary-box h3 {
+  font-family: 'Syne Mono', monospace;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+  header {
+    font-size: 1.7rem;
+    padding: 20px;
+  }
+  select {
+    width: 80%;
+  }
+}
