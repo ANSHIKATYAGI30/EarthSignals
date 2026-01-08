@@ -71,7 +71,7 @@ These tools were used to explore patterns, correlations, and trends before integ
 
 
 ## 🔗 MVP Access
-⚠️ The MVP currently runs on a **live server only** due to data loading restrictions.
+Hosted on github pages.
 
 
 
