@@ -1,4 +1,4 @@
-/* --- Import Fonts --- */
+/* --- Importing Fonts --- */
 @import url('https://fonts.googleapis.com/css2?family=Syne+Mono&family=Syne+Tactile&display=swap');
 
 
@@ -11,7 +11,7 @@ body {
 
 
 header {
-  background: linear-gradient(135deg, #008080, #5f9ea0, #6b5b95); /* teal → sea green → purple potato gradient */
+  background: linear-gradient(135deg, #008080, #5f9ea0, #6b5b95); 
   color: #ffffff;
   padding: 25px;
   text-align: center;
@@ -44,8 +44,8 @@ select {
 }
 
 select:hover {
-  background: #d0f0f0; /* light sea green hover */
-  transform: scale(1.03); /* subtle hover scale */
+  background: #d0f0f0; 
+  transform: scale(1.03); 
 }
 
 
@@ -70,18 +70,18 @@ select:hover {
   box-shadow: 0 10px 28px rgba(0,0,0,0.18);
 }
 
-
+/*title*/
 .card h3 {
   margin-top: 0;
   font-size: 1.3rem;
-  color: #008080; /* teal for titles */
+  color: #008080; 
   font-family: 'Syne Mono', monospace;
 }
 
-
+/*subtexts*/
 .card p, .card span {
   font-family: 'Syne Tactile', sans-serif;
-  color: #5f9ea0; /* sea green for subtexts */
+  color: #5f9ea0; 
 }
 
 #rankingTable {
@@ -131,7 +131,7 @@ select:hover {
 }
 
 .summary-box {
-  background: linear-gradient(135deg, #20B2AA, #6B5B95); /* sea green → purple potato */
+  background: linear-gradient(135deg, #20B2AA, #6B5B95); 
   color: white;
   padding: 15px 20px;
   border-radius: 10px;
@@ -147,6 +147,7 @@ select:hover {
   margin-bottom: 10px;
 }
 
+/*media query for mobile screens or small screen devices*/
 @media (max-width: 600px) {
   header {
     font-size: 1.7rem;
@@ -156,3 +157,4 @@ select:hover {
     width: 80%;
   }
 }
+
