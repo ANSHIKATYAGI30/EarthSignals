@@ -2,11 +2,12 @@ let climateData = [];
 let co2Chart, tempCo2Chart, renewableChart;
 
 
-// Load CSV data
+// Loading the data from csv files
 async function loadData() {
   const res = await fetch('data/climate_change_dataset.csv');
   const text = await res.text();
-  const rows = text.split('\n').slice(1); // remove header
+  //removing the header
+  const rows = text.split('\n').slice(1); 
   
   climateData = rows.map(r => {
   const c = r.split(',');
@@ -19,13 +20,12 @@ async function loadData() {
   };
 });
 
-
   setupDropdown();
   if(climateData.length) updateCharts(climateData[0].country);
 }
 
 
-// Populate country dropdown
+//the dropdown menu
 function setupDropdown() {
   const select = document.getElementById('countrySelect');
   const countries = [...new Set(climateData.map(d => d.country))].sort();
@@ -40,8 +40,9 @@ function setupDropdown() {
   select.onchange = () => updateCharts(select.value);
   select.onchange = () => {
   const selectedCountry = select.value;
-  updateCharts(selectedCountry);   // Existing charts update
-  updateSummary(selectedCountry);  // <-- Add this line
+  //updating existing charts
+  updateCharts(selectedCountry);   
+  updateSummary(selectedCountry); 
 };
 
 }
@@ -75,7 +76,7 @@ function updateRankingTable() {
   const tbody = document.getElementById('rankingTable').querySelector('tbody');
   tbody.innerHTML = ''; // Clear previous rows
 
-  // Aggregate latest CO2 and Renewable for each country
+  // Aggregate latest CO2 and Renewable energy for each country
   const latestData = {};
   climateData.forEach(d => {
     if (!latestData[d.country] || d.year > latestData[d.country].year) {
@@ -83,7 +84,7 @@ function updateRankingTable() {
     }
   });
 
-  // Convert to array and sort by CO2 descending
+  // Converting to array and sorting by CO2 descending
   const sortedCountries = Object.entries(latestData)
     .map(([country, data]) => ({ country, co2: data.co2, renewable: data.renewable }))
     .sort((a, b) => b.co2 - a.co2);
@@ -95,7 +96,7 @@ function updateRankingTable() {
 
   sortedCountries.forEach((c, i) => {
     const tr = document.createElement('tr');
-    tr.style.cursor = 'pointer'; // Make row clickable
+    tr.style.cursor = 'pointer'; // Making row clickable
 
     // On click, update charts for that country
     tr.onclick = () => {
@@ -124,7 +125,7 @@ function updateRankingTable() {
     else co2Td.style.color = '#33cc33';                    // Low → green
     co2Td.style.fontWeight = 'bold';
 
-    // Renewable
+    // Renewable energy
     const renewableTd = document.createElement('td');
     renewableTd.textContent = c.renewable.toFixed(1);
 
@@ -209,3 +210,4 @@ function drawRenewable(data) {
 
 // Start app
 loadData();
+
