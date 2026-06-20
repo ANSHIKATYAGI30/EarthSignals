@@ -32,6 +32,10 @@ async function loadData() {
 //the dropdown menu
 function setupDropdown() {
   const select = document.getElementById('countrySelect');
+
+  // Clear existing options before repopulating
+  select.innerHTML = '';
+
   const countries = [...new Set(climateData.map(d => d.country))].sort();
 
   countries.forEach(c => {
