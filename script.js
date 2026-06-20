@@ -123,7 +123,8 @@ function updateRankingTable() {
     co2Td.textContent = c.co2.toFixed(2);
 
     // Color code CO2 emmision table
-    const ratio = (c.co2 - minCO2) / (maxCO2 - minCO2); // 0 = min, 1 = max
+    const range = maxCO2 - minCO2;
+    const ratio = range === 0 ? 0.5 : (c.co2 - minCO2) / range; // 0 = min, 1 = max
     if (ratio > 0.66) co2Td.style.color = '#ff4d4d';       // High → red
     else if (ratio > 0.33) co2Td.style.color = '#ffcc00';  // Medium → yellow
     else co2Td.style.color = '#33cc33';                    // Low → green
