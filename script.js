@@ -21,7 +21,11 @@ async function loadData() {
 });
 
   setupDropdown();
-  if(climateData.length) updateCharts(climateData[0].country);
+  if (climateData.length) {
+  const defaultCountry = climateData[0].country;
+  updateCharts(defaultCountry);
+  updateSummary(defaultCountry);
+}
 }
 
 
