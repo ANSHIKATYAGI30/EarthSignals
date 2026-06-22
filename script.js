@@ -109,7 +109,7 @@ function updateRankingTable() {
     // On click, update charts for that country
     tr.onclick = () => {
       updateCharts(c.country);
-      // Also select country in dropdown
+      updateSummary(c.country);
       const select = document.getElementById('countrySelect');
       select.value = c.country;
     };
