@@ -1,7 +1,6 @@
 let climateData = [];
 let co2Chart, tempCo2Chart, renewableChart;
 
-
 // Loading the data from csv files
 async function loadData() {
   const res = await fetch('data/climate_change_dataset.csv');
